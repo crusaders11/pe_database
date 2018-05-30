@@ -1,6 +1,10 @@
 class Deal < ApplicationRecord
   # Direct associations
 
+  belongs_to :broker,
+             :required => false,
+             :counter_cache => true
+
   belongs_to :industry,
              :counter_cache => true
 

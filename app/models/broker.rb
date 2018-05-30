@@ -1,6 +1,8 @@
 class Broker < ApplicationRecord
   # Direct associations
 
+  has_many   :deals
+
   # Indirect associations
 
   # Validations
