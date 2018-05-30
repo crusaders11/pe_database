@@ -1,4 +1,6 @@
 ActiveAdmin.register Note do
+
+ permit_params :deal, :date, :notes, :deals_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
