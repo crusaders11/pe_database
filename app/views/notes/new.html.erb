@@ -51,7 +51,7 @@
           Deals
         </label>
 
-        <input type="text" id="deals_id" name="deals_id" placeholder="Deals" class="form-control" value="<%= @note.deals_id %>">
+        <%= select_tag(:deals_id, options_from_collection_for_select(Deal.all, :id, :deal_name, @note.deals_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
