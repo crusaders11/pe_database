@@ -1,6 +1,10 @@
 class Deal < ApplicationRecord
   # Direct associations
 
+  has_many   :notes,
+             :foreign_key => "deals_id",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
