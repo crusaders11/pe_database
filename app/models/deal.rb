@@ -1,6 +1,9 @@
 class Deal < ApplicationRecord
   # Direct associations
 
+  belongs_to :industry,
+             :counter_cache => true
+
   has_many   :notes,
              :foreign_key => "deals_id",
              :dependent => :destroy
