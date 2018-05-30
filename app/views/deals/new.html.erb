@@ -42,7 +42,7 @@
           Broker
         </label>
 
-        <input type="text" id="broker_id" name="broker_id" placeholder="Broker" class="form-control" value="<%= @deal.broker_id %>">
+        <%= select_tag(:broker_id, options_from_collection_for_select(Broker.all, :id, :name, @deal.broker_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for deal_lead -->
