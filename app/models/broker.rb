@@ -5,4 +5,6 @@ class Broker < ApplicationRecord
 
   # Validations
 
+  validates :phone, :uniqueness => true
+
 end
