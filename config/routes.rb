@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Broker resource:
+  # CREATE
+  get "/brokers/new", :controller => "brokers", :action => "new"
+  post "/create_broker", :controller => "brokers", :action => "create"
+
+  # READ
+  get "/brokers", :controller => "brokers", :action => "index"
+  get "/brokers/:id", :controller => "brokers", :action => "show"
+
+  # UPDATE
+  get "/brokers/:id/edit", :controller => "brokers", :action => "edit"
+  post "/update_broker/:id", :controller => "brokers", :action => "update"
+
+  # DELETE
+  get "/delete_broker/:id", :controller => "brokers", :action => "destroy"
+  #------------------------------
+
   # Routes for the Industry resource:
   # CREATE
   get "/industries/new", :controller => "industries", :action => "new"

@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Brokers
+    <a href="/brokers/new" class="btn btn-lg btn-success">New Broker</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Company</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @brokers.each do |broker| %>
+      <tr>
+        <td><%= broker.name %></td>
+        <td><%= broker.company %></td>
+        <td><%= broker.email %></td>
+        <td><%= broker.phone %></td>
+        <td>
+          <a href="/brokers/<%= broker.id %>" class="btn btn-primary">Show</a>
+          <a href="/brokers/<%= broker.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_broker/<%= broker.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
