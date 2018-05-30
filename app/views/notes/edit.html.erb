@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @note.errors.any? %>
+  <% @note.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Note #<%= @note.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_note/<%= @note.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for deal -->
+      <div class="form-group">
+        <label for="deal" class="control-label">
+          Deal
+        </label>
+
+        <input type="text" id="deal" name="deal" placeholder="Deal" class="form-control" value="<%= @note.deal %>">
+      </div>
+
+      <!-- Label and input for date -->
+      <div class="form-group">
+        <label for="date" class="control-label">
+          Date
+        </label>
+
+        <input type="text" id="date" name="date" placeholder="Date" class="form-control" value="<%= @note.date %>">
+      </div>
+
+      <!-- Label and input for notes -->
+      <div class="form-group">
+        <label for="notes" class="control-label">
+          Notes
+        </label>
+
+        <input type="text" id="notes" name="notes" placeholder="Notes" class="form-control" value="<%= @note.notes %>">
+      </div>
+
+      <!-- Label and input for deals_id -->
+      <div class="form-group">
+        <label for="deals_id" class="control-label">
+          Deals
+        </label>
+
+        <input type="text" id="deals_id" name="deals_id" placeholder="Deals" class="form-control" value="<%= @note.deals_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Note
+      </button>
+      or
+      <a href="/notes/<%= @note.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
