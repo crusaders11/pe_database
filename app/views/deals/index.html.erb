@@ -3,6 +3,139 @@
     Deals
     <a href="/deals/new" class="btn btn-lg btn-success">New Deal</a>
   </h1>
+</div><div class="row mb-1">
+  <div class="col-md-12">
+    <%= search_form_for @q, :class => collapse_search_form, :id => "deals_filters" do |f| %>
+      <p class="lead">Narrow results:</p>
+
+        <div class="form-group">
+    <%= f.label :deal_name_cont, "Deal name contains" %>
+    <%= f.text_field :deal_name_cont, :class => "form-control", :placeholder => "Deal name contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :final_ebitda_multiple_cont, "Final ebitda multiple contains" %>
+    <%= f.text_field :final_ebitda_multiple_cont, :class => "form-control", :placeholder => "Final ebitda multiple contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :final_revenue_multiple_cont, "Final revenue multiple contains" %>
+    <%= f.text_field :final_revenue_multiple_cont, :class => "form-control", :placeholder => "Final revenue multiple contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :final_enterprise_value_cont, "Final enterprise value contains" %>
+    <%= f.text_field :final_enterprise_value_cont, :class => "form-control", :placeholder => "Final enterprise value contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :loi_ebitda_multiple_cont, "Loi ebitda multiple contains" %>
+    <%= f.text_field :loi_ebitda_multiple_cont, :class => "form-control", :placeholder => "Loi ebitda multiple contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :loi_revenue_multiple_cont, "Loi revenue multiple contains" %>
+    <%= f.text_field :loi_revenue_multiple_cont, :class => "form-control", :placeholder => "Loi revenue multiple contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :loi_enterprise_value_cont, "Loi enterprise value contains" %>
+    <%= f.text_field :loi_enterprise_value_cont, :class => "form-control", :placeholder => "Loi enterprise value contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :ioi_ebitda_multiple_cont, "Ioi ebitda multiple contains" %>
+    <%= f.text_field :ioi_ebitda_multiple_cont, :class => "form-control", :placeholder => "Ioi ebitda multiple contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :ioi_revenue_multiple_cont, "Ioi revenue multiple contains" %>
+    <%= f.text_field :ioi_revenue_multiple_cont, :class => "form-control", :placeholder => "Ioi revenue multiple contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :ioi_enterprise_value_cont, "Ioi enterprise value contains" %>
+    <%= f.text_field :ioi_enterprise_value_cont, :class => "form-control", :placeholder => "Ioi enterprise value contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :ltm_ebitda_cont, "Ltm ebitda contains" %>
+    <%= f.text_field :ltm_ebitda_cont, :class => "form-control", :placeholder => "Ltm ebitda contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :ltm_revenue_cont, "Ltm revenue contains" %>
+    <%= f.text_field :ltm_revenue_cont, :class => "form-control", :placeholder => "Ltm revenue contains" %>
+  </div>
+
+<div class="form-group">
+    <%= f.label :deal_lead_cont, "Deal lead contains" %>
+    <%= f.text_field :deal_lead_cont, :class => "form-control", :placeholder => "Deal lead contains" %>
+  </div>
+
+<div class="form-group">
+          <%= f.label :created_at, "Created at" %>
+          <div class="row">
+            <div class='col-md-6 mb-1'>
+              <div class='input-group date' id='created_atgteqPicker'>
+                  <%= f.text_field :created_at_gteq, :class => "form-control", :placeholder => "Created at greater than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+
+            <div class='col-md-6'>
+              <div class='input-group date' id='created_atlteqPicker'>
+                  <%= f.text_field :created_at_lteq, :class => "form-control", :placeholder => "Created at less than or equal to" %>
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <script type="text/javascript">
+          $(function () {
+              $('#created_atgteqPicker').datetimepicker({
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atlteqPicker').datetimepicker({
+                  useCurrent: false,
+                  format: 'YYYY-MM-DD hh:mm:SS'
+              });
+              $('#created_atgteqPicker').on("dp.change", function (e) {
+                  $('#created_atlteqPicker').data("DateTimePicker").minDate(e.date);
+              });
+              $('#created_atlteqPicker').on("dp.change", function (e) {
+                  $('#created_atgteqPicker').data("DateTimePicker").maxDate(e.date);
+              });
+          });
+      </script>
+
+        <div class="form-group">
+      <%= f.label :notes_deal_cont, "Note deal contains" %>
+      <%= f.text_field :notes_deal_cont, :class => "form-control", :placeholder => "Note deal contains" %>
+    </div>
+
+<div class="form-group">
+      <%= f.label :industry_industry_name_cont, "Industry industry_name contains" %>
+      <%= f.text_field :industry_industry_name_cont, :class => "form-control", :placeholder => "Industry industry_name contains" %>
+    </div>
+
+<div class="form-group">
+      <%= f.label :broker_name_cont, "Broker name contains" %>
+      <%= f.text_field :broker_name_cont, :class => "form-control", :placeholder => "Broker name contains" %>
+    </div>
+
+      <%= f.submit :class => "btn btn-primary btn-block mb-1" %>
+
+      <a href="/deals" class="btn btn-default btn-block mb-1">Clear filters</a>
+    <% end %>
+    <a class="btn btn-default btn-block mb-1" data-toggle="collapse" href="#deals_filters">
+      Show Filters
+    </a>
+  </div>
 </div>
 
 <div class="row">
