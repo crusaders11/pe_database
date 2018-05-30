@@ -1,0 +1,163 @@
+<!-- Validation failure messages -->
+<% if @deal.errors.any? %>
+  <% @deal.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Deal #<%= @deal.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_deal/<%= @deal.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for deal_name -->
+      <div class="form-group">
+        <label for="deal_name" class="control-label">
+          Deal name
+        </label>
+
+        <input type="text" id="deal_name" name="deal_name" placeholder="Deal name" class="form-control" value="<%= @deal.deal_name %>">
+      </div>
+
+      <!-- Label and input for industry_id -->
+      <div class="form-group">
+        <label for="industry_id" class="control-label">
+          Industry
+        </label>
+
+        <input type="text" id="industry_id" name="industry_id" placeholder="Industry" class="form-control" value="<%= @deal.industry_id %>">
+      </div>
+
+      <!-- Label and input for broker_id -->
+      <div class="form-group">
+        <label for="broker_id" class="control-label">
+          Broker
+        </label>
+
+        <input type="text" id="broker_id" name="broker_id" placeholder="Broker" class="form-control" value="<%= @deal.broker_id %>">
+      </div>
+
+      <!-- Label and input for deal_lead -->
+      <div class="form-group">
+        <label for="deal_lead" class="control-label">
+          Deal lead
+        </label>
+
+        <input type="text" id="deal_lead" name="deal_lead" placeholder="Deal lead" class="form-control" value="<%= @deal.deal_lead %>">
+      </div>
+
+      <!-- Label and input for ltm_revenue -->
+      <div class="form-group">
+        <label for="ltm_revenue" class="control-label">
+          Ltm revenue
+        </label>
+
+        <input type="text" id="ltm_revenue" name="ltm_revenue" placeholder="Ltm revenue" class="form-control" value="<%= @deal.ltm_revenue %>">
+      </div>
+
+      <!-- Label and input for ltm_ebitda -->
+      <div class="form-group">
+        <label for="ltm_ebitda" class="control-label">
+          Ltm ebitda
+        </label>
+
+        <input type="text" id="ltm_ebitda" name="ltm_ebitda" placeholder="Ltm ebitda" class="form-control" value="<%= @deal.ltm_ebitda %>">
+      </div>
+
+      <!-- Label and input for ioi_enterprise_value -->
+      <div class="form-group">
+        <label for="ioi_enterprise_value" class="control-label">
+          Ioi enterprise value
+        </label>
+
+        <input type="text" id="ioi_enterprise_value" name="ioi_enterprise_value" placeholder="Ioi enterprise value" class="form-control" value="<%= @deal.ioi_enterprise_value %>">
+      </div>
+
+      <!-- Label and input for ioi_revenue_multiple -->
+      <div class="form-group">
+        <label for="ioi_revenue_multiple" class="control-label">
+          Ioi revenue multiple
+        </label>
+
+        <input type="text" id="ioi_revenue_multiple" name="ioi_revenue_multiple" placeholder="Ioi revenue multiple" class="form-control" value="<%= @deal.ioi_revenue_multiple %>">
+      </div>
+
+      <!-- Label and input for ioi_ebitda_multiple -->
+      <div class="form-group">
+        <label for="ioi_ebitda_multiple" class="control-label">
+          Ioi ebitda multiple
+        </label>
+
+        <input type="text" id="ioi_ebitda_multiple" name="ioi_ebitda_multiple" placeholder="Ioi ebitda multiple" class="form-control" value="<%= @deal.ioi_ebitda_multiple %>">
+      </div>
+
+      <!-- Label and input for loi_enterprise_value -->
+      <div class="form-group">
+        <label for="loi_enterprise_value" class="control-label">
+          Loi enterprise value
+        </label>
+
+        <input type="text" id="loi_enterprise_value" name="loi_enterprise_value" placeholder="Loi enterprise value" class="form-control" value="<%= @deal.loi_enterprise_value %>">
+      </div>
+
+      <!-- Label and input for loi_revenue_multiple -->
+      <div class="form-group">
+        <label for="loi_revenue_multiple" class="control-label">
+          Loi revenue multiple
+        </label>
+
+        <input type="text" id="loi_revenue_multiple" name="loi_revenue_multiple" placeholder="Loi revenue multiple" class="form-control" value="<%= @deal.loi_revenue_multiple %>">
+      </div>
+
+      <!-- Label and input for loi_ebitda_multiple -->
+      <div class="form-group">
+        <label for="loi_ebitda_multiple" class="control-label">
+          Loi ebitda multiple
+        </label>
+
+        <input type="text" id="loi_ebitda_multiple" name="loi_ebitda_multiple" placeholder="Loi ebitda multiple" class="form-control" value="<%= @deal.loi_ebitda_multiple %>">
+      </div>
+
+      <!-- Label and input for final_enterprise_value -->
+      <div class="form-group">
+        <label for="final_enterprise_value" class="control-label">
+          Final enterprise value
+        </label>
+
+        <input type="text" id="final_enterprise_value" name="final_enterprise_value" placeholder="Final enterprise value" class="form-control" value="<%= @deal.final_enterprise_value %>">
+      </div>
+
+      <!-- Label and input for final_revenue_multiple -->
+      <div class="form-group">
+        <label for="final_revenue_multiple" class="control-label">
+          Final revenue multiple
+        </label>
+
+        <input type="text" id="final_revenue_multiple" name="final_revenue_multiple" placeholder="Final revenue multiple" class="form-control" value="<%= @deal.final_revenue_multiple %>">
+      </div>
+
+      <!-- Label and input for final_ebitda_multiple -->
+      <div class="form-group">
+        <label for="final_ebitda_multiple" class="control-label">
+          Final ebitda multiple
+        </label>
+
+        <input type="text" id="final_ebitda_multiple" name="final_ebitda_multiple" placeholder="Final ebitda multiple" class="form-control" value="<%= @deal.final_ebitda_multiple %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Deal
+      </button>
+      or
+      <a href="/deals/<%= @deal.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

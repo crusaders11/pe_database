@@ -1,0 +1,67 @@
+<div class="page-header">
+  <h3>Deal #<%= @deal.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Deal name</dt>
+      <dd><%= @deal.deal_name %></dd>
+
+      <dt>Industry</dt>
+      <dd><%= @deal.industry_id %></dd>
+
+      <dt>Broker</dt>
+      <dd><%= @deal.broker_id %></dd>
+
+      <dt>Deal lead</dt>
+      <dd><%= @deal.deal_lead %></dd>
+
+      <dt>Ltm revenue</dt>
+      <dd><%= @deal.ltm_revenue %></dd>
+
+      <dt>Ltm ebitda</dt>
+      <dd><%= @deal.ltm_ebitda %></dd>
+
+      <dt>Ioi enterprise value</dt>
+      <dd><%= @deal.ioi_enterprise_value %></dd>
+
+      <dt>Ioi revenue multiple</dt>
+      <dd><%= @deal.ioi_revenue_multiple %></dd>
+
+      <dt>Ioi ebitda multiple</dt>
+      <dd><%= @deal.ioi_ebitda_multiple %></dd>
+
+      <dt>Loi enterprise value</dt>
+      <dd><%= @deal.loi_enterprise_value %></dd>
+
+      <dt>Loi revenue multiple</dt>
+      <dd><%= @deal.loi_revenue_multiple %></dd>
+
+      <dt>Loi ebitda multiple</dt>
+      <dd><%= @deal.loi_ebitda_multiple %></dd>
+
+      <dt>Final enterprise value</dt>
+      <dd><%= @deal.final_enterprise_value %></dd>
+
+      <dt>Final revenue multiple</dt>
+      <dd><%= @deal.final_revenue_multiple %></dd>
+
+      <dt>Final ebitda multiple</dt>
+      <dd><%= @deal.final_ebitda_multiple %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/deals" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/deals/<%= @deal.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_deal/<%= @deal.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="page-header">
+  <h1>
+    Deals
+    <a href="/deals/new" class="btn btn-lg btn-success">New Deal</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Deal name</th>
+        <th>Industry</th>
+        <th>Broker</th>
+        <th>Deal lead</th>
+        <th>Ltm revenue</th>
+        <th>Ltm ebitda</th>
+        <th>Ioi enterprise value</th>
+        <th>Ioi revenue multiple</th>
+        <th>Ioi ebitda multiple</th>
+        <th>Loi enterprise value</th>
+        <th>Loi revenue multiple</th>
+        <th>Loi ebitda multiple</th>
+        <th>Final enterprise value</th>
+        <th>Final revenue multiple</th>
+        <th>Final ebitda multiple</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @deals.each do |deal| %>
+      <tr>
+        <td><%= deal.deal_name %></td>
+        <td><%= deal.industry_id %></td>
+        <td><%= deal.broker_id %></td>
+        <td><%= deal.deal_lead %></td>
+        <td><%= deal.ltm_revenue %></td>
+        <td><%= deal.ltm_ebitda %></td>
+        <td><%= deal.ioi_enterprise_value %></td>
+        <td><%= deal.ioi_revenue_multiple %></td>
+        <td><%= deal.ioi_ebitda_multiple %></td>
+        <td><%= deal.loi_enterprise_value %></td>
+        <td><%= deal.loi_revenue_multiple %></td>
+        <td><%= deal.loi_ebitda_multiple %></td>
+        <td><%= deal.final_enterprise_value %></td>
+        <td><%= deal.final_revenue_multiple %></td>
+        <td><%= deal.final_ebitda_multiple %></td>
+        <td>
+          <a href="/deals/<%= deal.id %>" class="btn btn-primary">Show</a>
+          <a href="/deals/<%= deal.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_deal/<%= deal.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
