@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "deals#index"
   # Routes for the Note resource:
   # CREATE
