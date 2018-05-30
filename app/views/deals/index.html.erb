@@ -30,7 +30,7 @@
       <% @deals.each do |deal| %>
       <tr>
         <td><%= deal.deal_name %></td>
-        <td><%= deal.industry_id %></td>
+        <td><%= deal.industry.industry_name %></td>
         <td><%= deal.broker_id %></td>
         <td><%= deal.deal_lead %></td>
         <td><%= deal.ltm_revenue %></td>
