@@ -60,6 +60,146 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_deal" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for deal_name -->
+      <div class="form-group">
+        <label for="deal_name" class="control-label">
+          Deal name
+        </label>
+
+        <input type="text" id="deal_name" name="deal_name" placeholder="Deal name" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for industry_id -->
+      <div class="form-group">
+        <label for="industry_id" class="control-label">
+          Industry
+        </label>
+
+        <%= select_tag(:industry_id, options_from_collection_for_select(Industry.all, :id, :industry_name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for broker_id -->
+      <input type="hidden" name="broker_id" value="<%= @broker.id %>">
+
+      <!-- Label and input for deal_lead -->
+      <div class="form-group">
+        <label for="deal_lead" class="control-label">
+          Deal lead
+        </label>
+
+        <input type="text" id="deal_lead" name="deal_lead" placeholder="Deal lead" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for ltm_revenue -->
+      <div class="form-group">
+        <label for="ltm_revenue" class="control-label">
+          Ltm revenue
+        </label>
+
+        <input type="text" id="ltm_revenue" name="ltm_revenue" placeholder="Ltm revenue" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for ltm_ebitda -->
+      <div class="form-group">
+        <label for="ltm_ebitda" class="control-label">
+          Ltm ebitda
+        </label>
+
+        <input type="text" id="ltm_ebitda" name="ltm_ebitda" placeholder="Ltm ebitda" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for ioi_enterprise_value -->
+      <div class="form-group">
+        <label for="ioi_enterprise_value" class="control-label">
+          Ioi enterprise value
+        </label>
+
+        <input type="text" id="ioi_enterprise_value" name="ioi_enterprise_value" placeholder="Ioi enterprise value" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for ioi_revenue_multiple -->
+      <div class="form-group">
+        <label for="ioi_revenue_multiple" class="control-label">
+          Ioi revenue multiple
+        </label>
+
+        <input type="text" id="ioi_revenue_multiple" name="ioi_revenue_multiple" placeholder="Ioi revenue multiple" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for ioi_ebitda_multiple -->
+      <div class="form-group">
+        <label for="ioi_ebitda_multiple" class="control-label">
+          Ioi ebitda multiple
+        </label>
+
+        <input type="text" id="ioi_ebitda_multiple" name="ioi_ebitda_multiple" placeholder="Ioi ebitda multiple" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for loi_enterprise_value -->
+      <div class="form-group">
+        <label for="loi_enterprise_value" class="control-label">
+          Loi enterprise value
+        </label>
+
+        <input type="text" id="loi_enterprise_value" name="loi_enterprise_value" placeholder="Loi enterprise value" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for loi_revenue_multiple -->
+      <div class="form-group">
+        <label for="loi_revenue_multiple" class="control-label">
+          Loi revenue multiple
+        </label>
+
+        <input type="text" id="loi_revenue_multiple" name="loi_revenue_multiple" placeholder="Loi revenue multiple" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for loi_ebitda_multiple -->
+      <div class="form-group">
+        <label for="loi_ebitda_multiple" class="control-label">
+          Loi ebitda multiple
+        </label>
+
+        <input type="text" id="loi_ebitda_multiple" name="loi_ebitda_multiple" placeholder="Loi ebitda multiple" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for final_enterprise_value -->
+      <div class="form-group">
+        <label for="final_enterprise_value" class="control-label">
+          Final enterprise value
+        </label>
+
+        <input type="text" id="final_enterprise_value" name="final_enterprise_value" placeholder="Final enterprise value" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for final_revenue_multiple -->
+      <div class="form-group">
+        <label for="final_revenue_multiple" class="control-label">
+          Final revenue multiple
+        </label>
+
+        <input type="text" id="final_revenue_multiple" name="final_revenue_multiple" placeholder="Final revenue multiple" class="form-control" value="">
+      </div>
+
+      <!-- Label and input for final_ebitda_multiple -->
+      <div class="form-group">
+        <label for="final_ebitda_multiple" class="control-label">
+          Final ebitda multiple
+        </label>
+
+        <input type="text" id="final_ebitda_multiple" name="final_ebitda_multiple" placeholder="Final ebitda multiple" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Deal
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

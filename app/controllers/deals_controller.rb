@@ -6,6 +6,7 @@ class DealsController < ApplicationController
   end
 
   def show
+    @note = Note.new
     @deal = Deal.find(params[:id])
 
     render("deals/show.html.erb")

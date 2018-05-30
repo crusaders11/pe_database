@@ -6,6 +6,7 @@ class BrokersController < ApplicationController
   end
 
   def show
+    @deal = Deal.new
     @broker = Broker.find(params[:id])
 
     render("brokers/show.html.erb")
