@@ -5,6 +5,8 @@ class Broker < ApplicationRecord
 
   # Validations
 
+  validates :name, :presence => true
+
   validates :phone, :uniqueness => true
 
 end
