@@ -5,6 +5,8 @@ class Deal < ApplicationRecord
 
   # Validations
 
+  validates :deal_name, :uniqueness => true
+
   validates :deal_name, :presence => true
 
 end
