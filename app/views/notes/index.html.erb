@@ -21,7 +21,13 @@
         <td><%= note.deal %></td>
         <td><%= note.date %></td>
         <td><%= note.notes %></td>
-        <td><%= note.deals.deal_name %></td>
+        <td>
+          <% if note.deals.present? %>
+            <a href="/deals/<%= note.deals.id %>">
+              <%= note.deals.deal_name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/notes/<%= note.id %>" class="btn btn-primary">Show</a>
           <a href="/notes/<%= note.id %>/edit" class="btn btn-warning">Edit</a>

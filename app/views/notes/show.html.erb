@@ -15,7 +15,13 @@
       <dd><%= @note.notes %></dd>
 
       <dt>Deals</dt>
-      <dd><%= @note.deals_id %></dd>
+      <dd>
+        <% if @note.deals.present? %>
+          <a href="/deals/<%= @note.deals_id %>">
+            <%= @note.deals.deal_name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

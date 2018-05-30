@@ -9,10 +9,22 @@
       <dd><%= @deal.deal_name %></dd>
 
       <dt>Industry</dt>
-      <dd><%= @deal.industry_id %></dd>
+      <dd>
+        <% if @deal.industry.present? %>
+          <a href="/industries/<%= @deal.industry_id %>">
+            <%= @deal.industry.industry_name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Broker</dt>
-      <dd><%= @deal.broker_id %></dd>
+      <dd>
+        <% if @deal.broker.present? %>
+          <a href="/brokers/<%= @deal.broker_id %>">
+            <%= @deal.broker.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Deal lead</dt>
       <dd><%= @deal.deal_lead %></dd>
