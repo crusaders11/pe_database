@@ -32,3 +32,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Broker has many deals -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Deals
+      </li>
+
+      <% @broker.deals.each do |deal| %>
+        <li class="list-group-item">
+          <a href="/deals/<%= deal.id %>">
+            <%= deal.deal_name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/deals/<%= deal.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/deals/<%= deal.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_deal/<%= deal.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
